@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+double calculate_factorial(int n) {
+    if (n == 1) {
+        return 1;
+    } else {
+        return n * calculate_factorial(n-1);
+    }
+}
+
+int main() {
+    int n;
+    double sum = 0;
+    
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    
+    for (int i = 1; i <= n; i++) {
+        sum += calculate_factorial(i) / i;
+    }
+    
+    printf("Sum of the series = %lf\n", sum);
+    
+    return 0;
+}
